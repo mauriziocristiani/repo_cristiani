@@ -1,4 +1,4 @@
-<html>
+ html>
 <head>
 <!--commento html ...-->
 <style type="text/css">
@@ -156,12 +156,30 @@ a:hover{
 </div>
 
 
-<div class="gallery">
+
+
+
+
+
+
+
+
+
+
+<!--div class="gallery">
 <a  href="immagini/fiordi.jpg"  target="_blank" />
 <img src="immagini/fiordi.jpg" width=300px height="200px"  />
 </a>
 <div class="didascalia">fiordi norvegesi </div>
 </div>
+
+
+<div class="gallery">
+<a  href="immagini/fiordi.jpg"  target="_blank" />
+<img src="immagini/fiordi.jpg" width=300px height="200px"  />
+</a>
+<div class="didascalia">fiordi norvegesi </div>
+</div-->
 
 <br /><br />
 
