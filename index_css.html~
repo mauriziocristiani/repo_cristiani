@@ -1,0 +1,205 @@
+<html>
+<head>
+<!--commento html ...-->
+<style type="text/css">
+/*commento css*/
+body{
+/*background-color:yellow;*/
+background-image:url("immagini/muro.jpeg");
+background-repeat:no-repeat;
+/*repeat-y*/
+/*repeat-x*/
+background-position:60% -120%;
+background-size: 130px 200px;
+color:purple;}
+h1{background-color:yellow;
+background-clip:content-box;
+color:red;
+border-style:solid;
+}
+h2{
+border-style:solid;
+border-color:black;
+border-width:5px;
+border-radius:18px;
+padding: 20px;
+}
+
+p{background-color:yellow;}
+.testoblu{color:blue;
+letter-spacing:4px;
+padding: 20px 40px;
+}
+.colorediff{color:red;
+            background-color:green;
+            letter-spacing:24px;
+            word-spacing:10px;}
+
+.pluto{
+       background-color:green;
+       border: 2px solid yellow;
+       padding-left:20px;
+       padding-top:10px;
+       padding-right:10px;
+       padding-bottom:80px;
+       margin-left:20px;
+       margin-top:40px;
+}
+.box{
+     background-color:red;
+     width:400px;
+     height:300px;
+     border:4px dotted blue;
+     margin-left:20px;
+     margin-top:40px;
+     padding:40px;
+}
+
+.topo{width:500px;
+      border: 5px solid red;
+}
+
+.topo2{max-width:500px;
+       border: 5px solid red;
+}
+
+a:link, a:visited {
+                   color:red;
+                   text-decoration:none;
+}
+
+a:hover{
+        color:blue; 
+        font-size:24px;
+        text-decoration:underline;
+}
+
+.topo a:link {color:black;
+              text-decoration:none;
+}
+.topo a:hover{
+              color:red; 
+              font-size:10px;
+              text-decoration:underline;}
+
+ h5{color:red;}
+.topo h5{color:blue;}
+
+.sfondo{
+        background-image:url(immagini/sole.jpg), url(immagini/muro.jpeg) ;
+        background-repeat:no-repeat, repeat;
+        background-position: right bottom;
+        border:4px solid red;
+        height:200px;
+}
+
+.sfumato{
+         height:200px;
+         background:red;
+         background: linear-gradient(to left, red, yellow, green);
+         clear:left;
+}
+
+.sfondo{
+        background-image:url(immagini/sole.jpg), url(immagini/muro.jpeg) ;
+        background-repeat:no-repeat, repeat;
+        background-position: right bottom;
+        border:4px solid red;
+        height:200px;
+}
+
+.gallery{
+         width:180px;
+         border:2px solid red;
+         margin :4px;
+         float:left;
+}
+
+.gallery img{
+         width:100%;
+         height:auto;
+}
+
+.didascalia{
+            padding:15px;
+            text-align:center;
+}
+
+.gallery:hover{
+              opacity:0.5;
+              border:3px solid yellow;
+  }
+
+.imgsx{ clear:left;
+        float:left;
+}
+
+.sotto{ clear:left;
+      
+}
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="gallery">
+<a  href="immagini/fiordi.jpg"  target="_blank" />
+<img src="immagini/fiordi.jpg" width=300px height="200px"  />
+</a>
+<div class="didascalia">fiordi norvegesi </div>
+</div>
+
+
+<div class="gallery">
+<a  href="immagini/fiordi.jpg"  target="_blank" />
+<img src="immagini/fiordi.jpg" width=300px height="200px"  />
+</a>
+<div class="didascalia">fiordi norvegesi </div>
+</div>
+
+<br /><br />
+
+<br /><br /><br /><br />
+
+
+<img class="imgsx" src="immagini/fiordi.jpg" />
+<p>  testo fianco</p>
+<p class=sotto>  testo sotto</p>
+</a>
+
+<br /><br />
+
+
+
+<div class="sfumato"> qui box sfumato
+</div>
+<br /><br />
+<div class="sfondo"></div>
+<h5>titolo rosso</h5>
+<a href="#"> link </a>
+<div class="topo"> questo <a href="#">elemento</a> ha <h5>larghezza</h5> 500px</div>
+<br />
+<div class="topo2"> questo elemento ha larghezza 500px</div>
+<p class="pluto"> Fotografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cin</p>
+
+
+<h2>titolo h2</h2>
+<h1 class="colorediff">Benvenuti
+</h1>
+
+<p>ciao</p>
+<h1 class="testoblu">TITOLO</h1>
+<p class="testoblu">Fotografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei 
+<span class="colorediff">fogli di caratteri trasferibili</span> “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione </p>
+
+<div class="box">
+<img src="immagini/muro.jpeg" />
+</div>
+</body>
+</html>
