@@ -5,11 +5,26 @@ if(isset($_POST["testo"])){
    
     $testo=$_POST["testo"];
 
-    $parole_arr=explode(" ",$testo); 
+    $testo_arr=explode(" ",$testo); 
     
-     $numero=count($parole_arr); 
+     $numero=count($testo_arr); 
 }
+      $frequenzaparole=[];
+      
+     foreach($testo_arr as  $parola){
+          if (isset($frequenzaparole[$parola])){
+              $frequenzaparole[$parola]++; 
+             } 
+          else{  
+              $frequenzaparole[$parola]=1;
+              }   
+     }
 
-echo $numero;
-
+     arsort ($frequenzaparole);   // ordina array 
+ 
+    foreach ($frequenzaparole as $chiaveparola => $numeroparole){     
+              echo  $chiaveparola  . "="  . $numeroparole; 
+              echo "<br />";  
+  
+     }  	
 ?>
