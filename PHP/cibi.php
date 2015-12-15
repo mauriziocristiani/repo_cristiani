@@ -1,5 +1,5 @@
 <html>
-     <form method="get" >
+     <form method="post" >
      <input type="text" name="cibo"/>   
      <input type="submit" name="cerca"/>  
      </form>  
@@ -8,9 +8,9 @@
 	include "databasecibi.php";
 
 
-	if (isset($_GET["cibo"])){
+	if (isset($_POST["cibo"])){
 
-	$cibo=$_GET["cibo"];
+	$cibo=$_POST["cibo"];
 
 	if (isset ($cibieingredienti[$cibo])) {
     
