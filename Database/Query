@@ -1,4 +1,54 @@
-select nome, round (abitanti/superficie, 2) from provincia order by abitanti/superficie, 2; --> Estrarre nome e densità abitativa da provincia ordinate per densità abitativa, densità arrotondata di due cifre decimali.
+estrarre lista delle regioni
+
+select  group_concat(distinct settore separator "|" )  from articolo ;
+select  group_concat(nome order by nome desc separator "|")  from regione ; 
+select  group_concat(cognome,nome,data_nascita, "\n  ")  from utente;
+
+
+----------------------------------------------------------------------------------------------------
+calcolare   superficie media e deviazione standard 
+abitanti 
+comuni
+delle provincie
+scrivere come media  deviazione
+
+select concat(round(avg(superficie),2),"+-", round(std(superficie),2)) as superficie from provincia;
+select concat(round(avg(superficie),2),"+-", round(std(superficie),2)) as superficie from provincia;
+---------------------------------------------------------------------------------------
+calcolare superficie totale e numero abitanti numero comuni italia
+select sum(comuni),sum(abitanti),sum(superficie) from provincia;
+--------------------------------------------------------------------------
+calcolare il  valore totale del magazzino
+SELECT sum(prezzo*quantita) FROM articolo;
+
+---------------------------------------------------------------------------------------------------
+
+SELECT max(data_nascita) FROM utente
+
+--------------------------------------------------------------------------------------
+conta il numero degli articoli
+
+select count(*) from articolo;
+
+tabella articolo
++--------------+------------------+------+-----+---------+----------------+
+| Field        | Type             | Null | Key | Default | Extra          |
++--------------+------------------+------+-----+---------+----------------+
+| id           | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| settore      | varchar(255)     | NO   |     |         |                |
+| fornitore    | varchar(255)     | NO   |     |         |                |
+| codice       | varchar(255)     | NO   |     |         |                |
+| descrizione  | varchar(255)     | NO   |     |         |                |
+| collocazione | varchar(255)     | NO   |     |         |                |
+| cespite      | varchar(255)     | NO   |     |         |                |
+| quantita     | int(10) unsigned | NO   |     | 0       |                |
+| in_uso       | int(10) unsigned | NO   |     | NULL    |                |
+| unita        | varchar(255)     | NO   |     | NULL    |                |
+| prezzo       | decimal(12,5)    | YES  |     | NULL    |                |
+| note         | text             | NO   |     | NULL    |                |
++--------------+------------------+------+-----+---------+----------------+
+
+	select nome, round (abitanti/superficie, 2) from provincia order by abitanti/superficie, 2; --> Estrarre nome e densità abitativa da provincia ordinate per densità abitativa, densità arrotondata di due cifre decimali.
 
 ----------------------------------------------------------------------------------------------------------
 
