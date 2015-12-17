@@ -2,7 +2,8 @@
 
 <body>
 
-    <form   method="post"    style="background-color:104EFF; width 50 %; margin:auto" >
+    <form   method="post"    style="background-color:104EFF; width 50 %; margin:auto  border:2px solid
+                             black; paddind:5px; font-weight:900; color:FFEB00;text-align:center;  >
             <p>nome</p>
             <input name="nome"      type="text" style="border:2px solid black " /> 
             <p>cognome</p>
