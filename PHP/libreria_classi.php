@@ -10,7 +10,7 @@
         			public  function nomeCompleto(){
 							        $n=$this->nome . " " .  $this->cognome;
                       return $n; 
-											}              
+						  }              
             
 							public  function visualizza(){
 							        $n=$this->nomeCompleto();
@@ -23,7 +23,22 @@
                           	
 
 							}
-
-
 }
+
+
+	class IndirizzoEsteso extends  Indirizzo {
+             	public $ncellulare;
+							
+							public  function visualizza(){
+							$n=parent::visualizza();
+              $n=$n .  "</br>N. cellulare : " .$this->ncellulare;
+   						return $n;
+
+							}
+
+}              
+            
+					
+
+
 ?>
