@@ -1,3 +1,9 @@
+insert into squadra VALUES(null,"Milan","San Siro","Milano",1925,13,"Allegri","Berlusconi");
+insert into giocatore VALUES(null,"Rivera","Gianni","1960-01-01",1.75,68,"M","Italia");
+desc squadra;
+desc giocatore; 
+insert into giocatore VALUES(null,"Rivera","Gianni","1960-01-01",1.75,68,"M","Italia");
+----------------------------------------------------------------------------------------------.----
 estrarre lista delle regioni
 
 select  group_concat(distinct settore separator "|" )  from articolo ;
