@@ -1,8 +1,17 @@
+-----------------------------------------------------------------------------------
+Inserire  righe in tabella 
+
+
+
+update allievo set login ="mcristia", password = MD5("mauri") where id=1;
+
+insert into allievo(cognome,nome,data_nascita) VALUES ("Cristiani","Maurizio","1961-08-09");
 insert into squadra VALUES(null,"Milan","San Siro","Milano",1925,13,"Allegri","Berlusconi");
 insert into giocatore VALUES(null,"Rivera","Gianni","1960-01-01",1.75,68,"M","Italia");
 desc squadra;
 desc giocatore; 
 insert into giocatore VALUES(null,"Rivera","Gianni","1960-01-01",1.75,68,"M","Italia");
+insert into utente(cognome,data_nascita,nome) VALUES ("Cristiani","1961-08-09","Maurizio");
 ----------------------------------------------------------------------------------------------.----
 estrarre lista delle regioni
 
@@ -12,6 +21,8 @@ select  group_concat(cognome,nome,data_nascita, "\n  ")  from utente;
 
 
 ----------------------------------------------------------------------------------------------------
+SELECT
+
 calcolare   superficie media e deviazione standard 
 abitanti 
 comuni
@@ -123,19 +134,5 @@ SELECT nome, cognome, data_nascita, date_format(data_nascita, "%d/%m/%Y") AS "Fo
 ----------------------------------------------------------------------------------------------------------
 
 SELECT nome, cognome, data_nascita, timestampdiff(YEAR, data_nascita,CURDATE()) AS "AGE" FROM utente;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
