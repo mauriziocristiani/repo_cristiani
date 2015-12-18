@@ -1,0 +1,63 @@
+.container{background-color:yellow;}
+
+.header{height:140px; 
+        color:purple; 
+				border: solid 4px green; 
+				font-family: Arial, Verdana, serif;
+				font-size:40px;
+				text-align:center;
+				font-weight:bold;
+}
+
+h1{position:absolute;top:30px;
+}
+	
+
+
+.nav{height:100px;
+		 background-color:black; 
+		 border-bottom: solid 4px red;
+    
+}
+
+.footer{height:100px;
+			  background-color:green; 
+        color: red;
+        font-size:12px;
+        text-align:center; 
+				border-bottom: dotted 4px red;
+}
+
+.copy {position:relative;
+       top:5px;
+}
+
+.menu {	font-size:18px; 
+				position:relative; 
+				left:110px;
+       	top:40px;
+			  color:black;
+        list-style-type:none; 
+
+}
+
+.menu li {display:inline;
+ 					padding:20px;	
+          font-size:18px;
+				  background-color:yellow;  
+				  margin:-2px; 
+
+}
+
+.menu li a{color:red;
+ 					 font-weight:bold;
+				   text-decoration:none;  
+				 
+}
+
+.menu li a:hover{color:blue;
+ 					 			 
+}
+
+
+
