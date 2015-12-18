@@ -1,0 +1,138 @@
+-----------------------------------------------------------------------------------
+Inserire  righe in tabella 
+
+
+
+update allievo set login ="mcristia", password = MD5("mauri") where id=1;
+
+insert into allievo(cognome,nome,data_nascita) VALUES ("Cristiani","Maurizio","1961-08-09");
+insert into squadra VALUES(null,"Milan","San Siro","Milano",1925,13,"Allegri","Berlusconi");
+insert into giocatore VALUES(null,"Rivera","Gianni","1960-01-01",1.75,68,"M","Italia");
+desc squadra;
+desc giocatore; 
+insert into giocatore VALUES(null,"Rivera","Gianni","1960-01-01",1.75,68,"M","Italia");
+insert into utente(cognome,data_nascita,nome) VALUES ("Cristiani","1961-08-09","Maurizio");
+----------------------------------------------------------------------------------------------.----
+estrarre lista delle regioni
+
+select  group_concat(distinct settore separator "|" )  from articolo ;
+select  group_concat(nome order by nome desc separator "|")  from regione ; 
+select  group_concat(cognome,nome,data_nascita, "\n  ")  from utente;
+
+
+----------------------------------------------------------------------------------------------------
+SELECT
+
+calcolare   superficie media e deviazione standard 
+abitanti 
+comuni
+delle provincie
+scrivere come media  deviazione
+
+select concat(round(avg(superficie),2),"+-", round(std(superficie),2)) as superficie from provincia;
+select concat(round(avg(superficie),2),"+-", round(std(superficie),2)) as superficie from provincia;
+---------------------------------------------------------------------------------------
+calcolare superficie totale e numero abitanti numero comuni italia
+select sum(comuni),sum(abitanti),sum(superficie) from provincia;
+--------------------------------------------------------------------------
+calcolare il  valore totale del magazzino
+SELECT sum(prezzo*quantita) FROM articolo;
+
+---------------------------------------------------------------------------------------------------
+
+SELECT max(data_nascita) FROM utente
+
+--------------------------------------------------------------------------------------
+conta il numero degli articoli
+
+select count(*) from articolo;
+
+tabella articolo
++--------------+------------------+------+-----+---------+----------------+
+| Field        | Type             | Null | Key | Default | Extra          |
++--------------+------------------+------+-----+---------+----------------+
+| id           | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| settore      | varchar(255)     | NO   |     |         |                |
+| fornitore    | varchar(255)     | NO   |     |         |                |
+| codice       | varchar(255)     | NO   |     |         |                |
+| descrizione  | varchar(255)     | NO   |     |         |                |
+| collocazione | varchar(255)     | NO   |     |         |                |
+| cespite      | varchar(255)     | NO   |     |         |                |
+| quantita     | int(10) unsigned | NO   |     | 0       |                |
+| in_uso       | int(10) unsigned | NO   |     | NULL    |                |
+| unita        | varchar(255)     | NO   |     | NULL    |                |
+| prezzo       | decimal(12,5)    | YES  |     | NULL    |                |
+| note         | text             | NO   |     | NULL    |                |
++--------------+------------------+------+-----+---------+----------------+
+
+	select nome, round (abitanti/superficie, 2) from provincia order by abitanti/superficie, 2; --> Estrarre nome e densità abitativa da provincia ordinate per densità abitativa, densità arrotondata di due cifre decimali.
+
+----------------------------------------------------------------------------------------------------------
+
+select concat (nome, '(',sigla,')') from provincia; --> concatenazione di stringhe.
+
+----------------------------------------------------------------------------------------------------------
+
+select concat("Il sig. ",LEFT(nome,1)," ",cognome) FROM utente; --> Estrarre stringhe di tipo "Il sig. nome cognome" da utente.
+
+----------------------------------------------------------------------------------------------------------
+
+select concat_ws(" ","Il sig.",LEFT(nome,1),cognome, "nato il",data_nascita) FROM utente; --> Si specifica uno spazio iniziale.
+
+----------------------------------------------------------------------------------------------------------
+
+select concat_ws(" ","Il sig.",CONCAT(LEFT(nome,1.),"."),cognome, "nato il",data_nascita) FROM utente; --> Viene eliminato così lo spazio tra l'iniziale del nome e il punto.
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT CONCAT(UPPER(LEFT(descrizione,1)),LOWER(SUBSTRING(descrizione,2))) AS "Articoli" FROM articolo limit 10; --> Visualizzare la prima lettera maiuscola e tutte le altre minuscole.
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT nome, abitanti, superficie FROM provincia WHERE (abitanti/superficie) BETWEEN 500 AND 1000; --> Estrae nomi, abitanti, superficie e densità abitativa tra 500 e 1000.
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT nome, sigla FROM provincia WHERE sigla IN("AO", "AT", "PU", "OT", "OG", "FC", "BT", "KR", "VV", "WC"); --> Estrarre nomi e sigla delle provincie di AO, AT, PU, OT, OG, FC, BT, KR, VV, WC.
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT settore, descrizione, quantita*prezzo FROM articolo WHERE (quantita >0) AND (quantita*prezzo NOT BETWEEN 50 AND 2000); --> Estrarre settore, descrizione e valore degli articoli con valore inferiore a 50 euro o superiore a 2000 euro non esauriti.
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT settore, descrizione, quantita, prezzo FROM articolo WHERE settore = "ristorativo"; --> Estrarre settore, descrizione, quantita e prezzo degli articoli del settore ristorativo.
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT settore, descrizione, quantita, prezzo FROM articolo WHERE descrizione LIKE "%LEGNO%"; --> Estrarre da una descrizione tutti gli articoli con la parola "legno"
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT settore, descrizione, quantita, prezzo FROM articolo WHERE descrizione LIKE "%LEGNO%" AND descrizione LIKE "%SCALPELLO%"; --> Estrarre settore, descrizione, quantita e prezzo degli articoli la cui descrizione contiene le parole "legno" e "scalpello".
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT round (abitanti/superficie,2) AS "densità abitativa" FROM provincia LIMIT 10; --> AS corrisponde all'alias dell'operazione.
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT nome, cognome, data_nascita, day(data_nascita) AS "day", month(data_nascita) AS "month", year(data_nascita) AS "year" FROM utente;
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT nome, cognome, data_nascita, day(data_nascita) AS "day", month(data_nascita) AS "month", year(data_nascita) AS "year", dayname (data_nascita) AS "dayname", monthname (data_nascita) AS "monthname" FROM utente WHERE month(data_nascita) =3 AND day(data_nascita) >=21 OR month(data_nascita)=6 and day(data_nascita)<=20 OR (month(data_nascita) between 4 and 5);
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT nome, cognome, data_nascita, day(data_nascita) AS "day", month(data_nascita) AS "month", year(data_nascita) AS "year", dayname (data_nascita) AS "dayname", monthname (data_nascita) AS "monthname", right((data_nascita),5) FROM utente WHERE right((data_nascita),5) BETWEEN "03-21" AND "06-20";
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT nome, cognome, data_nascita, date_format(data_nascita, "%d/%m/%Y") AS "Formato italiano" FROM utente;
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT nome, cognome, data_nascita, timestampdiff(YEAR, data_nascita,CURDATE()) AS "AGE" FROM utente;
+
+
