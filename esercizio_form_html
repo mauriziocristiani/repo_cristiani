@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--il tag title serve a ...-->
+	
+<title>
+Il primo negozio di bolle di sapone a Torino!
+	</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+
+<body bgcolor="yellow">
+
+
+<form id="feedback" method="post" action="mailto:carma@engim.it">
+<label>Nome*</label> 
+<input type="text" name="nome" placeholder="inserisce il tuo nome" maxlength="10" size="25" autofocus autocomplete="on" required="required" /> 
+<br />
+<label>Password</label>
+<input type="password" placeholder="massimo 6 caratteri" maxlength="6" autocomplete="on"/>
+<br />
+<label>Data nascita:</label>
+<input type="date" /><br />
+<input type="color" /><br />
+<input type="file" /><br />
+indica il tuo livello di dolore:
+0<input type="range" />100<br />
+<label>Paese di provenienza
+</label>
+<input type="text" value="Italia" readonly /> <br /> <br />
+<label>Commenti</label>
+<textarea rows="5" cols="5" name="commenti"> </textarea>
+<br />
+Indica il tuo genere<br />
+<label>Maschio:</label>
+<input type="radio" name="genere" value="M" /> <br/>
+<label>Femmina</label>
+<input type="radio" name="genere" value="F" checked="checked" /> <br/>
+Indica i tuoi gruppi preferiti:<br />
+<label>Queen</label>
+<input type="checkbox" name="gruppi" value="queen" /> <br/>
+<label>U2</label>
+<input type="checkbox" name="gruppi" value="u2" /> <br/>
+<label>REM</label>
+<input type="checkbox" name="gruppi" value="rem" /> <br/>
+<label>Email</label>
+<input type="email" name="email"  /> <br/>
+<label>NUmero figli</label>
+<input type="number" name="figli"  min="0" max="6" /> <br/>
+<label>Stati</label>
+<select name="stati">
+<optgroup label="Europa">
+<option value="IT">Italia</option>
+<option value="FR">Francia</option>
+<option value="DE">Germania</option>
+</optgroup>
+<optgroup label="America">
+<option value="USA" selected="selected">USA</option>
+<option value="MX" selected="selected">Messico</option>
+</optgroup>
+<optgroup label="Australia">
+<option value="AUS">Australia</option>
+</optgroup>
+</select>
+<br /><br />
+<!--<input type="submit" name="invia" value="Invia il modulo" />-->
+<input type="image" src="immagini/invia.jpeg" alt="invia il modulo" height="15"/>
+<br />
+<input type="reset" name="cancella" value="Cancella i dati" />
+
+</form>
+</body>
+</html>
