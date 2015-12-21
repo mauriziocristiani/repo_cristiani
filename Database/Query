@@ -1,7 +1,43 @@
+--------------------------------------------------------------------------------------
+relazioni   tra tabelle
+
+
+
+
+select regione.nome as nome_regione ,provincia.nome as nome_provincia ,provincia.sigla,provincia.superficie,provincia.abitanti, provincia.comuni from regione join provincia on  regione.id = provincia.regione ;
+
+select * from regione join provincia on  regione.id = provincia.regione ;
+
+mysql> desc regione;
++-------+------------------+------+-----+---------+----------------+
+| Field | Type             | Null | Key | Default | Extra          |
++-------+------------------+------+-----+---------+----------------+
+|	id    | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| nome  | varchar(255)     | NO   |     | NULL    |                |
++-------+------------------+------+-----+---------+----------------+
+
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| nome       | varchar(255)     | NO   |     | NULL    |                |
+| sigla      | char(2)          | NO   |     | NULL    |                |
+| abitanti   | int(11)          | NO   |     | NULL    |                |
+| superficie | float            | NO   |     | NULL    |                |
+| comuni     | int(11)          | NO   |     | NULL    |                |
+| regione    | int(10)          | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+
+
+
+
+
+
+
+
+
 -----------------------------------------------------------------------------------
 Inserire  righe in tabella 
-
-
 
 update allievo set login ="mcristia", password = MD5("mauri") where id=1;
 

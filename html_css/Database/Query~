@@ -1,19 +1,7 @@
---------------------------------------------------------------------------------------
-relazioni   tra tabelle
-
-
-
-
-
-
-
-
-
-
-
-
 -----------------------------------------------------------------------------------
 Inserire  righe in tabella 
+
+
 
 update allievo set login ="mcristia", password = MD5("mauri") where id=1;
 

@@ -1,0 +1,47 @@
+
+
+.box1{
+         background-color:orange;
+          width:60%;
+         height:100%; 
+         margin:auto;
+         padding:10px;
+         font-size:10px; 
+        
+  }
+.box2{
+         background-color:red;
+         position:relative;
+         color:white; 
+         padding-top:10px; 
+         padding-left:10px;
+         width:200px;
+         height:200px;
+         top:100px;
+         left:30px; 
+  }
+.box3{
+         background-color:white;
+         position:relative;
+         padding:10px;
+         color:blue; 
+         width:200px;
+         height:400px;
+         top:-110px;
+         left:330px;
+         font-size:italic 10px; 
+         border:2px solid black; 
+  }
+
+.position{
+         color:red;
+         position:relative;
+         top:20px;
+         left:20px; 
+  }
+
+.pippo{ background-color:red;
+  }
+.pipponew{background-color:yellow;
+  }
+
