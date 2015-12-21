@@ -1,0 +1,48 @@
+ul{
+	list-style:none;
+}
+
+.navigation li a {
+	width:130px;
+	background-color:orange;
+	float:left;
+	text-align:center;
+	text-decoration:none;
+	padding-top:17px;
+	padding-bottom:17px;
+	list-style:none;
+  margin:15px; 
+}
+
+.navigation li a:hover{
+	text-decoration:underline;
+}
+
+.navigation li:hover ul{
+	display:block;
+}
+
+.dropdown-nav{
+	position:absolute;
+	top:70px;
+	display:none;
+}
+
+.dropdown-nav.uno{
+	left:270px;
+	top:55px;
+}
+
+.dropdown-nav.due{
+	left:528px;
+	top:55px;
+}
+
+
+
+
+
+
+
+
+
