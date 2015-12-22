@@ -11,11 +11,12 @@ ul{
 	padding-top:10px;
 	padding-bottom:10px;
 	list-style:none;
-  margin:2px; 
+  margin:1px; 
 }
 
 .navigation li a:hover{
 	text-decoration:underline;
+ background-color:orange;
     
 }
 
@@ -26,27 +27,27 @@ ul{
 }
 .navigation ul a:hover {
 	border:	solid 4px black;
-  background-color:orange;
+ 
   
 }
 
 
 .dropdown-nav{
 	position:absolute;
-	top:70px;
+	top:30px;
 	display:none;
 
 }
 
 .dropdown-nav.uno{
 	left:270px;
-	top:55px;
+	top:30px;
   
 }
 
 .dropdown-nav.due{
 	left:528px;
-	top:55px;
+	top:30px;
   
 }
 
