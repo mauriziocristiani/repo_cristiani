@@ -1,0 +1,35 @@
+<html>
+<head>
+<!--commento html ...-->
+<meta charset="utf-8">
+<title> Css3 overview</title>
+<linl rel="stylesheet" href=css/style.css">
+
+</head>
+
+
+
+<body>
+
+<div class="box">
+
+<img class=imgsxbox src="immagini/fiordi.jpg" width=150px height="150px"  />
+
+<p class="sotto">Fotografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei 
+</p>
+
+</div>
+
+
+<div class="box2">box2 
+
+</div>
+
+<div class="box3">box3 
+
+</div>
+
+
+
+</body>
+</html>
