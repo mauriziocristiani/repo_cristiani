@@ -18,10 +18,11 @@ if (isset($_GET["cibo"])){
 
    foreach($cibieingredienti  as  $cibo  =>  $ingr){
         
-        $posizione=strpos($cibieingredienti,$ingr); 
+        $posizione=strpos($ingr,$_GET["cibo"]); 
     
     if ($posizione > -1) {
-      	 echo $cibo;
+      	 echo htmlentities($cibo)."<br/>";
       	} 
+    } 
  } 
 ?>
