@@ -1,11 +1,14 @@
 <html>
      <form method="post" >
-      scambio  di due spostare il valore di due variabili <br/>   <br/>
-      variabile 1
-     <input type="text" name="variabile1"/>   
-      variabile 2
-     <input type="text" name="variabile2"/>   
-     <input type="submit" name="esercizio5"/>  
+      calcolare valore telefono usato   <br/>   
+      PRICE
+     <input type="text" name="price"/>   <br/>   <br/>
+      OPTIONAL
+     <input type="text" name="optional"/> <br/>   <br/>
+      ANNI  TELEFONO  
+      <input type="text" name="anni"/> <br/>   <br/>
+  
+     <input type="submit" name="invio"/> 
      </form>  
 </html>
 <?php
