@@ -1,0 +1,118 @@
+#container{
+	   width:90%;
+           margin: 0 auto;
+}
+
+body{
+	font-size:14px;
+        background-color:url(images/siteBackgroung.png)  repeat;
+        margin: 0;
+        padding: 0;
+        color:#707070;  
+}
+
+
+#header h1{
+	    float:left;
+            padding:20px  0 20px 15px;
+}
+
+#header h1 span{color:red;
+}
+
+#header h1 a{text-decoration:none;
+	    color:#333333;
+            font-size:48px;
+}
+
+
+#header h1 a:hover{text-decoration:none;
+	    color:#333333;
+            font-size:48px;
+}
+
+.clearfloat {clear:both;
+}
+
+#navcontainer ul{
+                 margin:0;
+                 list-style-type:none;
+		 color:white;	
+                 text-align:center;
+                 padding:17px 0;
+                 height:18px;
+                 background-color:black;
+
+}
+
+
+#navcontainer ul  li{ 
+                      display:inline;
+                      float:center;
+}
+
+
+#navcontainer ul  li a{ 
+                       text-decoration:none;
+	               color:#999999;
+                       padding:17px 30px;
+                       border-right:solid  1px #333333;
+                       text-transform::uppercase;
+
+
+}
+
+#navcontainer ul  li a:hover{ 
+                       background:url(sfondo.jpg)  repeat-x;
+    
+}
+
+#navcontainer #active a{ 
+                   	Background:url(sfondo.jpg)  repeat-x;
+    
+}
+
+
+#threeBoxes { 
+                
+                  padding:15px;
+                  
+         
+}
+
+h2{
+	          color:red; 
+                  padding:10px 0 20px 0;
+         
+}
+
+.box{            float:left; 
+                 width:25%;
+                 padding:10px 35px;
+                 background-color:grey;
+                 color:white; 
+         
+}
+
+.buttonLink{      background:red;     
+                  color:white; 
+                  padding:0px 10px;      
+                  margin:10px 0;
+                  text-decoration:none;
+                  border-bottom:solid 2px white;
+                  display:inline-block;      
+}
+
+h3{
+	          color:red; 
+                 	         
+}
+
+
+
+
+
+
+
+
+

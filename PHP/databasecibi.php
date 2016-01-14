@@ -33,7 +33,7 @@
 	$cibieingredienti = array(
 		"Pane" => "farina, acqua, lievito", 
 		"Arachidi" => "arachidi", 
-		"Latte" => "acqua, grassi, proteine", 
+		"Latte" => "acqua, grassi, proteine	", 
 		"Uova" => "tuorlo, albume", 
 		"Insalata" => "insalata", 
 		"Pasta" => "farina, sale, acqua", 
