@@ -1,95 +1,95 @@
 <html>
-     <form method="post" >
-      Dammi un numero  se maggiore di zero e fai il modulo
-     <input type="text" name="numero1"/>   <br /> 
-      dammi un secondo numero da  sommare al primo
-      <input type="text" name="numero2"/>   <br/>   <br/> 
+   
+<h1>     esercizi  PHP   con gestione classi  </h1>
 
-      calcolare il prezzo piu iva   <br/> 
-      prezzo
-     <input type="text" name="prezzo"/>  <br/> <br/>  
-     tasso
-     <input type="text" name="tasso"/  <br/> 
+ <form method="post" >
+   
+     <!--h3>      Dammi un numero  se maggiore di zero   </h3>
+     <input type="text" name="numero1"/>  
+     <button name="subject" type="submit" value="modulo">MODULO</button>  
+     <button name="subject" type="submit" value="quadrato">QUADRATO</button>  
+     
+     <h3> dammi un secondo numero da  sommare al primo </h3>
+      <input type="text" name="numero2"/>   
+      <button name="subject" type="submit" value="addizione">SOMMATORIA</button>  
+     <h3>     calcolare il prezzo piu iva   </h3>
+   
+     <input type="text" name="numero1"/> 
+     <input type="text" name="prezzo"/>  
+    
+     <label for="tasso">Tasso</label>
+     <input type="text" name="tasso"/  <br/ --> 
+     
+   
+  
+     <h1>     Gestione dinamica di 2 variabili  </h1>
 
-      <input type="submit" name="classi"/>  
+     <label for="num1">Num1</label>
+     <input type="text" name="num1"/> 
+  
+
+		 <select name="operazione">
+  		<option value="modulo">Modulo</option>
+  		<option value="quadrato">Quadrato</option>
+  		<option value="addizione">Addizione</option>
+  		<option value="tasso">Tasso</option>
+		</select>
+
+     
+     <label for="num2">Num2</label>
+     <input type="text" name="num2"/>      
+     <button name="subject" type="submit" value="applica tasso">APPLICA</button>  
+   <h3>    Risultati  elaborazioni  </h3>
+
      </form>  
+ 
 </html>
 
    
 <?php	
 // prova con classi	
-class Numero
-{
-	public $n;
 
-	public  function __construct($numero)
-  {
-   	$this->n = $numero;
-   }
+include "libreria_classi.php";
 
+$a  =  new Numero($_POST["num1"]);
 
- public function  modulo()
-   {
-     	if ($this->n < 0)   {
-       return -1 * $this->n; 
-   }
-   return $this->n; 
+if (isset($_POST["operazione"])) {
+		if ($_POST["operazione"] == "modulo") {
+       
+    	  echo "=================================";
+ 				echo "<br>";
+        echo "modulo = " . $a->modulo();
+				echo "<br>";
+				echo "<br>" ;
+		}
+  	if ($_POST["operazione"] == "quadrato") {
+    	  echo "================================="; 
+				echo "<br>";
+				echo "elevato al quadrato = ";
+				echo   $a->quadrato();
+				echo "<br>";
+		}
+
+		if ($_POST["operazione"] == "addizione") {
+    	  echo "================================="; 
+				echo "<br>";
+				echo "sommatoria  = ";
+				echo   $a->somma($_POST["num2"]); 
+				echo "<br>";
+
+		}
+
+		if ($_POST["operazione"] == "tasso") {
+				echo "=================================";
+				echo "<br>";
+				echo "prezzo con iva = ";
+
+				echo  $a->iva($_POST["num2"]);
+				echo "<br>"; 
+				echo "=================================";
+    	 
+		}
+
 }
-
- public function  somma($b)
-   {
-     	$risultato =$this->n + $b;
-      return $risultato; 
-   }
-
-public function  quadrato()
-   {
-     	$risultato =$this->n * $this->n;
-      return $risultato; 
-   }
-
-function iva($tasso)
-{
-  $risultato = $this->n+($this->n*$tasso)/100;
-return $risultato;
-    
-}
-
-
-
- }
-
-
-
-$a  =  new Numero($_POST["numero1"]);
-echo "=================================";
-echo "<br>";
-echo "numero1 segno contrario = ";
-echo   $a->modulo();
-echo "<br>" ;
-echo "================================="; 
-echo "<br>";
-echo "sommatoria numero1 e numero2 = ";
-echo   $a->somma($_POST["numero2"]); 
-echo "<br>";
-echo "================================="; 
-echo "<br>";
-echo "numero1 elevato al quadrato = ";
-echo   $a->quadrato();
-echo "<br>";
-echo "=================================";
-echo "<br>";
-echo "prezzo con iva = ";
-$prezzo = new Numero($_POST["prezzo"]);
-echo  $prezzo->iva($_POST["tasso"]);
-echo "<br>"; 
-echo "=================================";
-
-// $prezzo = new Numero($_POST["tasso"]);
-
-
-
-
-
 
 ?>
