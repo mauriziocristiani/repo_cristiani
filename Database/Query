@@ -1,15 +1,31 @@
 
+mysql> select count(*) from  abbonamento where abbonamento.id= 1 and "2014-10-01" between dal and al;+----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
 
+
+
+select utente.nome,utente.cognome,abbonamento.dal as inizio_validita ,abbonamento.al as fine_validita from utente left join abbonamento on utente.id = abbonamento.utente;
 
 select utente.nome,utente.cognome,abbonamento.dal as inizio_validita ,abbonamento.al as fine_validita from utente join abbonamento on utente.id = abbonamento.utente;
 
 
 
  select stazione.nome,tornello.numero from stazione join tornello on tornello.stazione = stazione.id;
+mysql> desc  accesso;
 
-
-
-
+accesso	
++-------------+----------+------+-----+---------+----------------+
+| Field       | Type     | Null | Key | Default | Extra          |
++-------------+----------+------+-----+---------+----------------+
+| id          | int(11)  | NO   | PRI | NULL    | auto_increment |
+| dataora     | datetime | NO   |     | NULL    |                |
+| abbonamento | int(11)  | NO   |     | NULL    |                |
+| esito       | int(11)  | NO   |     | NULL    |                |
++-------------+----------+------+-----+---------+----------------+
 
 mysql> desc  utente;
 +-----------------+--------------+------+-----+---------+----------------+

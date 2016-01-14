@@ -1,3 +1,65 @@
+
+
+
+select utente.nome,utente.cognome,abbonamento.dal as inizio_validita ,abbonamento.al as fine_validita from utente join abbonamento on utente.id = abbonamento.utente;
+
+
+
+ select stazione.nome,tornello.numero from stazione join tornello on tornello.stazione = stazione.id;
+
+
+
+
+
+mysql> desc  utente;
++-----------------+--------------+------+-----+---------+----------------+
+| Field           | Type         | Null | Key | Default | Extra          |
++-----------------+--------------+------+-----+---------+----------------+
+| id              | int(11)      | NO   | PRI | NULL    | auto_increment |
+| cognome         | varchar(255) | NO   |     | NULL    |                |
+| nome            | varchar(255) | NO   |     | NULL    |                |
+| data_nascita    | date         | NO   |     | NULL    |                |
+| luogo_residenza | varchar(255) | NO   |     | NULL    |                |
++-----------------+--------------+------+-----+---------+----------------+
+
+
+mysql> desc  abbonamento;+--------+---------+------+-----+---------+----------------+
+| Field  | Type    | Null | Key | Default | Extra          |
++--------+---------+------+-----+---------+----------------+
+| id     | int(11) | NO   | PRI | NULL    | auto_increment |
+| utente | int(11) | NO   |     | NULL    |                |
+| dal    | date    | NO   |     | NULL    |                |
+| al     | date    | NO   |     | NULL    |                |
++--------+---------+------+-----+---------+----------------+
+
+
+mysql> desc  tornello;
++----------+---------+------+-----+---------+----------------+
+| Field    | Type    | Null | Key | Default | Extra          |
++----------+---------+------+-----+---------+----------------+
+| id       | int(11) | NO   | PRI | NULL    | auto_increment |
+| stazione | int(11) | NO   |     | NULL    |                |
+| numero   | int(11) | NO   |     | NULL    |                |
++----------+---------+------+-----+---------+----------------+
+
+
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nome  | varchar(255) | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+
++-------------------------+
+| Tables_in_metropolitana |
++-------------------------+
+| abbonamento             |
+| accesso                 |
+| stazione                |
+| tornello                |
+| utente                  |
++-------------------------+
+
 --------------------------------------------------------------------------------------
 relazioni   tra tabelle
 
