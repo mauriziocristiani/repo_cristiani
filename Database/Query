@@ -1,4 +1,8 @@
 
+select count(*) from accesso join tornello on  accesso.tornello = tornello.id where tornello.stazione = 12;
+mysql> select count(*), sum(esito),100*sum(esito)/count(*) as percentuale from  accesso;
+
+
 mysql> select count(*) from  abbonamento where abbonamento.id= 1 and "2014-10-01" between dal and al;+----------+
 | count(*) |
 +----------+
