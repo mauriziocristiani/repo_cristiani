@@ -1,20 +1,83 @@
-
-select count(*) from accesso join tornello on  accesso.tornello = tornello.id where tornello.stazione = 12;
-mysql> select count(*), sum(esito),100*sum(esito)/count(*) as percentuale from  accesso;
-
-
-mysql> select count(*) from  abbonamento where abbonamento.id= 1 and "2014-10-01" between dal and al;+----------+
-| count(*) |
-+----------+
-|        1 |
-+----------+
-1 row in set (0.00 sec)
+select utente.cognome  , count(*) from accesso 
+  join tornello  on  accesso.tornello = tornello.id  
+  join stazione on tornello.stazione=stazione.id  
+  join abbonamento on accesso.abbonamento = abbonamento.id   
+  join utente on abbonamento.utente = utente.id   where  utente.id = 1  
+       group by utente.id; 
 
 
 
-select utente.nome,utente.cognome,abbonamento.dal as inizio_validita ,abbonamento.al as fine_validita from utente left join abbonamento on utente.id = abbonamento.utente;
+select utente.cognome  , count(*) from accesso 
+join tornello  on  accesso.tornello = tornello.id  
+join stazione on tornello.stazione=stazione.id  
+join abbonamento on accesso.abbonamento = abbonamento.id   
+join utente on abbonamento.utente = utente.id     
+group by utente.id; 
 
-select utente.nome,utente.cognome,abbonamento.dal as inizio_validita ,abbonamento.al as fine_validita from utente join abbonamento on utente.id = abbonamento.utente;
+
+
+
+select regione.nome as nome,count(*) as provincie,sum(provincia.abitanti) as abitanti,
+sum(provincia.comuni) as comuni,sum(provincia.superficie) as superficie ,
+group_concat(provincia.sigla) as sigla,
+round (sum(provincia.abitanti)/sum(provincia.superficie),2) as densita  
+from regione  
+join provincia  on regione.id = provincia.regione 
+group by nome order by  densita;
+ 
+
+select regione.nome as nome,count(*) as provincie,sum(provincia.abitanti) as abitanti,
+sum(provincia.comuni) as comuni,sum(provincia.superficie) as superficie ,
+group_concat(provincia.sigla) as sigla   
+from regione  
+join provincia  on regione.id = provincia.regione 
+group by nome 
+order by sigla;
+
+
+ SELECT settore, count(*) as num_articoli,round(sum(quantita * prezzo )),
+round(sum(quantita * prezzo )/count(*)) as media  
+FROM articolo 
+group by settore 
+order by media;
+
+
+SELECT settore, count(*) as num_articoli,round(sum(quantita * prezzo )) as valore   
+FROM articolo group by settore order by valore;
+
+SELECT settore, count(*),round(sum(quantita * prezzo )) as articoli   
+FROM articolo 
+group by settore 
+order by articoli;
+
+SELECT settore, count(*)  
+FROM articolo 
+group by settore;
+
+----------------------14 1 2016- --------------------------------------------------------------------
+select count(*) from accesso 
+join tornello on  accesso.tornello = tornello.id 
+where tornello.stazione = 12;
+
+select count(*), 
+sum(esito),100*sum(esito)/count(*) as percentuale 
+from  accesso;
+
+ select count(*) 
+from  abbonamento 
+where  abbonamento.id= 1    and "2014-10-01" 
+between dal and al;+----------+
+
+
+select utente.nome, utente.cognome,abbonamento.dal as inizio_validita ,
+       abbonamento.al as fine_validita 
+from  utente left 
+join abbonamento on utente.id = abbonamento.utente;
+
+select utente.nome,utente.cognome,abbonamento.dal as inizio_validita ,
+abbonamento.al as fine_validita 
+from utente 
+join abbonamento on utente.id = abbonamento.utente;
 
 
 
@@ -80,7 +143,7 @@ mysql> desc  tornello;
 | utente                  |
 +-------------------------+
 
---------------------------------------------------------------------------------------
+-----------------------------23  12  2015  ----------------------------------------------------
 relazioni   tra tabelle
 
 
@@ -222,6 +285,9 @@ SELECT settore, descrizione, quantita*prezzo FROM articolo WHERE (quantita >0) A
 SELECT settore, descrizione, quantita, prezzo FROM articolo WHERE settore = "ristorativo"; --> Estrarre settore, descrizione, quantita e prezzo degli articoli del settore ristorativo.
 
 ----------------------------------------------------------------------------------------------------------
+
+ select regione.nome as nome,count(*) as provincie,sum(provincia.abitanti) as abitanti,sum(provincia.comuni) as comuni,sum(provincia.superficie) as superficie ,group_concat(provincia.sigla) as sigla,round (sum(provincia.abitanti)/sum(provincia.superficie),2) as densita  from regione  join provincia  on regione.id = provincia.regione group by nome order by sigla;
+
 
 SELECT settore, descrizione, quantita, prezzo FROM articolo WHERE descrizione LIKE "%LEGNO%"; --> Estrarre da una descrizione tutti gli articoli con la parola "legno"
 
