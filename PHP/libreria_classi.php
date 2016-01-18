@@ -56,7 +56,7 @@ class Numero
        return -1 * $this->n; 
    }
    return $this->n; 
-}
+  }
 
  public function  somma($b)
    {
@@ -77,10 +77,54 @@ return $risultato;
     
 }
 
-
-
  }         
-					
 
+
+	class Mystring {
+            private $testo;
+							
+
+           	public  function __construct($n)
+            {
+   	         $this->testo = $n;
+             }
+ 
+  				
+  					public function ribaltastringa (){
+  					$r="	";
+  						for($i=strlen($this->testo)-1 ;$i>=0 ;$i--){
+						     $r=$r.$this->testo[$i];
+							}
+				 		 return $r;
+						}
+
+        	
+  					public function dividi ($s){
+                		$posizionetrovata=strpos($this->testo, $s);
+            
+ 							if ( $posizionetrovata !== false ) {
+						
+						 		// estrae la parte di stringa dall’inizio fino alla parte trovata 
+ 								$primaparte=substr($this->testo, 0, $posizionetrovata);
+              	// estrae la parte di stringa dalla fine della chiave fino alla fine della stringa
+    						$terzaparte=substr($this->testo, $posizionetrovata + strlen($s));
+           
+ 								return array($primaparte, $terzaparte);
+								}
+
+         		 }
+
+						public function evidenzia ($s){
+
+             		 	$primaeultima=$this->dividi($s);
+									$evidenzia=$primaeultima[0] . "<b>" .  $s ."</b>" . $primaeultima[1];
+  		 						return $evidenzia;
+	   				}
+
+         
+
+
+
+}
 
 ?>
