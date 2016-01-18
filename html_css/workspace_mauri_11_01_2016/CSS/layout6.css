@@ -81,8 +81,8 @@ body{
 }
 
 h2{
-	          color:red; 
-                  padding:10px 0 20px 0;
+	          			color:red; 
+            			padding:10px 0 20px 0;
          
 }
 
@@ -109,10 +109,67 @@ h3{
 }
 
 
+.contentsx{
+				 float:left;
+				 width:600px;
+         padding:10px 35px;
+	       text-align:justify; 
+                 	         
+}
 
 
 
+.imgsx{
+				 float:left;
+				 padding:2px 20px 10px 2px;
+	        	         
+}
+
+.links{
+				 margin-left:600px;
+				 padding:10px 35px;
+         	         
+}
+
+.links li{
+				 display:block;
+				 background:url(p.png) no-repeat left 6px;
+         padding: 0 0 10px 7px;
+         	         
+}
 
 
+.links li a{
+						color:#008bce;
+ 						text-decoration:none;
+	          
+           
+}			
+.links li a:hover{
+                  text-decoration:underline;
+                  color:#008bce;
+ 								  font-size:18px;
+	               	         
+}
 
+#footer{           padding: 0 10px 0 7px; 
+                   border-top: solid2px black;
+	               	   
+}
 
+#footer p{         
+									text-align:center;                   
+	              	   
+}
+
+#footer a{        color:#008bce;  
+                  text-decoration:none;
+                  font-size:12px;      
+      	   
+}
+
+#footer a{        color:#008bce;  
+                  text-decoration:underline;
+                  font-size:12px;      
+      	   
+}
