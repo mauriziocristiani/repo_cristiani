@@ -1,3 +1,34 @@
+estrarre il  
+nome stazione
+numero del tornello
+
+select stazione.nome,tornello.numero as tornello, count(*) from accesso    
+join tornello  on  accesso.tornello = tornello.id     
+join stazione on tornello.stazione=stazione.id 
+group by tornello;
+
+
+select    year(dataora) as anno, month(dataora) as mese, count(*) as numero,sum(esito=0) as ko,sum(esito=1) as ok  from accesso  group by anno,mese;
+
+
+
+select    year(dataora) as anno, month(dataora) as mese, count(*) as numero,sum(not esito) as ko,sum(esito) as ok  from accesso  group by anno,mese;
+
+select    year(dataora) as anno, month(dataora) as mese, count(*) as numero  from accesso  group by anno,mese;
+
+
+mysql> select    year(dataora) as anno month(dataora) as mese,   count(*) as numero  from    accesso  group by anno,mese ;
+
+
+estrarre il  numero di passaggi per ogni ora di natale 2015
+-----------------------------------------------------------
+mysql> select count(*), hour(dataora) as ora  from    accesso    where date(dataora) = "2014-12-25" group by  ora ;
+
+
+select count(*), hour(dataora)  from    accesso    where date(dataora) = "2014-12-25" group by  hour(dataora) ;
+
+
+----------------------------------------------------------------------------------------
 select utente.cognome  , count(*) from accesso 
   join tornello  on  accesso.tornello = tornello.id  
   join stazione on tornello.stazione=stazione.id  
