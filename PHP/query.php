@@ -1,17 +1,19 @@
 connesione al db
-<?php
-
-//connessione  al db   host,nome utente password  dbda usare
-$link =mysql_connect("a22docente","softuser","_s0ft*");
-
-//esecuzione query
-$query =mysql_query("select login,password from utente ");
-
-//iterazione  sui  risultati 
-while($record=mysql_fetch_assoc($query))
-{
- echo $record['login']; 
+<?php 
+//Connessione al DB
+$link = mysql_connect("a22docente", "softuser", "_s0ft*");
+mysql_select_db("fanqook");
+//Esecuzione query
+$query = mysql_query("SELECT login, password FROM utente");
+echo "<table border=1>\n";
+//iterazione dei record
+while ($record = mysql_fetch_assoc($query)){
+	echo "<tr>";
+	echo "<td>".$record["login"]."</td>";
+	echo "<td>".$record["password"]."</td>";
+	echo "</tr>";
 }
+
 
 ?>
 
