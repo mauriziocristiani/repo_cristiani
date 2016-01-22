@@ -9,6 +9,7 @@
 
 		  if (isset($_POST["logout"])){
 		      session_destroy();
+          header("location:/html_css/PHP/login.php");
 			}	 
 
 			
