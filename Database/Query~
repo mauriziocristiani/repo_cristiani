@@ -1,3 +1,90 @@
+connesione al db
+<?php
+
+//connessione  al db   host,nomw utente password  dbda usare
+$link =mysql_connect("a22docente","softuser","_soft*");
+
+//esecuzione query
+$query =mysql_query("select login AS A from utente ");
+
+//iterazione  sui  risultati 
+while ($record  =  mysql_fetch_assoc($query))
+{
+ echo.$record['a']; 
+}
+
+?>
+
+
+
+
+
+
+
+
+
+
+--------------popolare tabelle ----------
+insert into utente(login,password) select login,password from soft2015.utente;
+
+
+
+________________   creare base dati 
+ optimize  table  post;   
+
+Alter table  utente        /modifica   tabella
+
+
+GRANT all  on  allievo 19.* to  softuser@'%';
+
+flush  privileges;      /aggiornamento  permessi  
+
+
+drop table utente2       / cancella tabella
+
+//crea e popola tabella
+create  table utente   AS   SELECT *   from  soft2015.utente
+
+//crea e popola tabella
+create  table utente   like   SELECT *   from  soft2015.utente
+insert into  utente2   like   SELECT *   from  soft2015.utente
+
+creare   tabelle  allievo18
+use     allievo18 
+
+create table utente (id int not null auto_increment primary key, login varchar(255) not null,password char(40) not null);
+
+
+show create  table  utente; 
+
+alter table post ADD column titolo         varchar(255) not null after id;  /aggiungere un campo
+alter table post CHANGE     titolo titolo  varchar(255) not null;           /modifico un campo
+alter table post DROP       titolo;                                        /cancello  un campo
+
+DELETE  FROM  post where  1;                                             /cancella tutte le righe 
+TRUNCATE TABLE   post;
+
+SHOW indexes from utente\G; 	
+ALTER TABLE utente ADD INDEX login(login);                     /inserisco   un indice
+ALTER TABLE utente drop INDEX login;                           /cancello   un indice
+ALTER TABLE utente ADD unique INDEX login(login);
+ALTER TABLE fanq  ADD INDEX UNIQUE  postutente(post,utente);
+ALTER TABLE post  ADD FULLTEXT index testo(testo);
+--------------------------------------------------------------------------
+----
+
+create table utente (id int not null auto_increment primary key, login varchar(255) not null,password char(40) not null);
+
+create table post (id int not null auto_increment primary key,utente int(11) not null,testo text not null,dataora datatime not null);
+
+create table fanq (id int not null auto_increment primary key,utente int(11) not null,post int(11) not null);
+
+
+create table media (id int not null auto_increment primary key,post int(11) not null,descrizione varchar(255) not null)
+
+
+
+
 estrarre il  
 nome stazione
 numero del tornello
