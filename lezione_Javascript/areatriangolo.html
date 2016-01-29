@@ -1,0 +1,41 @@
+<html>
+<head>
+</head>
+
+<body>
+	<h1>javascript</h1>
+		
+	<script>
+var triangolo = new Object();
+triangolo.l1 = 11; //proprieta istanza
+triangolo.l2 = 12;
+triangolo.l3 = 13;
+triangolo.Perimetro= function() {
+  return (this.l1+this.l2+this.l3)/2;}
+
+triangolo.getcalcolaArea = function() {
+        return Math.sqrt(
+        (this.Perimetro()*(this.Perimetro()-this.l1) *
+        (this.Perimetro()-this.l2) *
+        (this.Perimetro()-this.l3))) 
+    
+}
+console.log(triangolo.getcalcolaArea())
+
+
+
+
+
+
+
+
+
+			
+
+
+	</script>
+
+</body>
+
+
+</html>

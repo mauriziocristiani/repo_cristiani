@@ -1,0 +1,88 @@
+<html>
+<head>
+</head>
+
+<body>
+	<h1>javascript</h1>
+	<script>
+
+
+var a=calcolatrice(6,2,"/")
+
+alert(a)
+
+function calcolatrice(a,b,c){
+
+if(argument.length!=3){
+     return"WRONG";
+}
+
+if(typeof(a)!="number"){
+     return"WRONG";
+}
+if(typeof(b)!="number"){
+     return"WRONG";
+}
+if(typeof(c)!="string"){
+     return"WRONG";
+}
+
+
+ if (c=="+"){
+    var risultato = somma(a,b)
+    return risultato;
+  }
+  else  if (c=="-") {
+    var risultato = differenza(a,b)
+    return risultato;
+  } else  if (c=="*"){
+    var risultato = per(a,b)
+    return risultato;
+  }else  if (c=="/"){
+    var risultato = diviso(a,b)
+    return risultato;
+  }
+   
+ else { 
+    var risultato = somma(a,b)
+    return false;
+  }
+  
+  
+ }
+ 
+ 
+ 
+function somma(a,b) {return a+b};
+ 
+function differenza(a,b) {return a-b};
+ 
+function per(a,b) {
+ 
+    var z = a * b;
+    return z;
+}
+function diviso(a,b) {
+ 
+    var z = a / b;
+    return z;
+}
+	
+
+
+  alert(math.random())
+  alert(Math.cell())
+
+  alert(Math.sqrt(25))
+  alert(Math.pow(5,2))		
+
+	</script>
+	
+	
+	
+
+
+</body>
+
+
+</html>
