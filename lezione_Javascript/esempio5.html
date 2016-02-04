@@ -5,35 +5,15 @@
 <body>
 	<h1>javascript</h1>
 	<script>
-			
-var  today= new Date();
-console.log("oggi e il"+
-            today.getDate()+" "+
-            mesi[today.getMounth()]+", è "+
-            mesi[today.getDay()]+"alle "
-            "+ today"
-            
+	var person = new Object();
+	person.name="Andrea";     //proprieta istanza
+	person.surname="Beccaris";
+	person.getFullName=function(){
+	return this.name+" "+this.surname;
+	}
 
-
-
-					)
-
-
-var mesi=[
-         "gennaio",
-         "febbraio",
-          "marzo",
-          "aprile"
-]
-
-
-var giorni=[
-         "lunedi",
-         "martedi",
-         "mecoledi",
-         "giovedi",
-]
-	</script>
+	console.log(person.getFullName() );
+	alert(person.getFullName() );
 	
 	
 	

@@ -1,0 +1,77 @@
+<html>
+<head>
+</head>
+
+<body>
+	<h1>   ***  Gestione array   *****
+
+         Classe  media
+       ------array[Numeri]
+             numeroElem 
+             aggiungi(numero) 
+             ordinaArray() 
+             media() 
+             rimuovi()
+             toString()
+</h1>
+
+	<script>
+
+function Media(){
+	this.elementi = new Array();
+	this.cntElem = 0;
+	
+  this.aggiungi = function(numero){
+  	   this.elementi.push(numero);
+    	 this.cntElem++
+     	}
+	
+  this.rimuovi = function(){
+  	   this.elementi.pop();
+   	   this.cntElem--
+    	 }     
+    
+	this.ordinaArray = function(){
+  	   this.elementi.sort(
+             function(a,b){
+             	return a-b; 
+             } );
+    	  }
+    
+	this.calcolaMedia = function(){
+  	 	      	 var somma=0
+    		      	for(i=0; i<this.cntElem; i=++) {
+      		    			somma=somma+this.elementi[i];
+    								}
+  	      	   return somma/this.cntElem;
+ 	 }    
+	
+ 	 this.toString = function(){
+  		              var stringa="";
+    				      	for(i=0; i<cntElem; i=++) {
+      		    			stringa + this.elementi[i] + "-";
+    								}
+  	      			   return stringa;
+ 				}
+
+var m = new Media();
+console.dir(m);
+for(var i=0; i<10;i++){
+		m.aggiungi(10*1)
+		} ;
+for(var i=0; i<5;i++){
+		m.rimuovi()
+		} ;
+		m.calcolaMedia();
+    m.ordinaArray();
+    m.toString();   
+
+
+
+</script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,146 @@
+<html>
+<head>
+</head>
+
+<body>
+	<h1>area triangolo e quadrato</h1>
+
+	<script>
+
+// area triangolo e quadrato
+
+function Formageometrica(){
+this.calcolaArea = function(){
+     	}
+}
+
+
+function Quadrato(l){ 
+this.l=5;
+this.calcolaArea=function(){
+     			return (this.l* this.l);
+					}
+          
+}
+
+function Cerchio(r){ 
+this.r=r;
+this.pgreco= Math.PI;
+
+this.calcolaArea=function(){
+     			return (this.r*this.r*this.pgreco);
+					}
+   
+}
+
+var c = new Formageometrica()  
+var a = new Cerchio(1);
+var b = new Quadrato(5);
+console.log(a.calcolaArea());
+console.log(b.calcolaArea());
+
+
+</script>
+
+
+<h1>secondo esempio  area triangolo e quadrato</h1>
+
+
+<script>
+
+function Formageometrica(){
+this.calcolaArea = function(){
+   if (thishasOwnProperty('pi'))
+   		{return(this.r *this.r*this.pgreco);
+      }
+   else
+      {return (this.l * this.l);
+      }
+      
+   
+		}
+}
+function Quadrato(l){ 
+this.l=5;
+this.calcolaArea=function(){
+   			return (this.l* this.l);
+					}
+          
+}
+
+function Cerchio(r){ 
+this.r=r;
+this.pgreco= Math.PI;
+
+this.calcolaArea=function(){
+  		return (this.r*this.r*this.pgreco);
+			}
+  
+}
+
+Cerchio.prototype = new Formageometrica(); 
+Quadrato.prototype = new Formageometrica(); 
+
+var c = new Cerchio(1);
+var q = new Quadrato(5);
+
+console.log(c.calcolaArea());
+console.log(q.calcolaArea());
+console.log(q.toString());
+console.dir(q);
+
+
+</script>
+
+<script>
+
+function Formageometrica(){
+this.calcolaArea = function(){
+   if (thishasOwnProperty('pi'))
+   		{return(this.r *this.r*this.pgreco);
+      }
+   else
+      {return (this.l * this.l);
+      }
+      
+   
+		}
+}
+function Quadrato(l){ 
+this.l=5;
+this.calcolaArea=function(){
+   			return (this.l* this.l);
+					}
+          
+}
+
+function Cerchio(r){ 
+this.r=r;
+this.pgreco= Math.PI;
+
+this.calcolaArea=function(){
+  		return (this.r*this.r*this.pgreco);
+			}
+  
+}
+
+Cerchio.prototype = new Formageometrica(); 
+Quadrato.prototype = new Formageometrica(); 
+
+var c = new Cerchio(1);
+var q = new Quadrato(5);
+var f = new Formageometrica(); 
+
+console.log(c.calcolaArea());
+console.log(q.calcolaArea());
+console.log(f.Formageometrica());
+
+console.dir(q);
+
+</script>
+
+
+</body>
+
+
+</html>
