@@ -28,7 +28,7 @@ public class Esercizio5
 
 
 
-		System.out.println("ilmaggiore  dei tre numeri è  "+ maggiore);
+		System.out.println("il maggiore  dei tre numeri è  "+ maggiore);
 
 
 	}

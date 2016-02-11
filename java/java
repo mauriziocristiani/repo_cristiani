@@ -1,0 +1,32 @@
+per compilare  javac Hello.javac      COMPILATORE
+per eseguire   java  Hello            INTERPRETE
+Variabile       
+assegnamento
+tipi di dato 
+ogni Variabile deve essere dichiarata  come  tipo .
+
+Si  richiede l’anno di nascita  e l’anno attuale
+e  si fornisci in output l’età
+
+
+
+
+public class InputTastiera
+{
+	public static void main (String [] args)
+	{
+
+		Scanner tastiera=new Scanner(System.in);
+		System.out.println("come ti chiami?");
+
+		String nome=tastiera.nextLine(); //leggo tutta la riga digitata e la metto in una stringa
+
+		System.out.println("quanti anni hai?");
+
+		int eta=tastiera.nextInt(); //leggo l'et� e la metto in un intero
+
+		System.out.println("Ciao "+nome+" di anni "+eta);
+
+
+	}
+}
