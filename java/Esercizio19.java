@@ -1,9 +1,6 @@
 import java.util.Scanner;
 
-
-
-
-public class Esercizio18
+public class Esercizio19
 {
 	public static void main (String [] args)
 	{
@@ -23,20 +20,23 @@ public class Esercizio18
 	      	    
 		    }
 		      
- 		System.out.println("dammi un  valore per  confrontare  se esiste maggiore su array ");	  	
+ 		System.out.println("verifica se array ordinato ");	  	
 		int confronta = tastiera.nextInt(); 
 
 		
 		    
-		    int posMax=0;
+		    int i=0;
 		    boolean flag=false;    
-		 	for(int i=0; i<a.length; i++){
-				if (confronta<a[i])   
+		 	while(i<a.length && flag=false){
+				if (a[i]<=a[i+1])   
 		            flag=true;
-		    }    
-	if (flag)
-		System.out.println("se esiste un valore su array  maggiore di "+confronta);
+		    }   
 
+
+	if (flag)
+		System.out.println("array ordinato");
+	else
+		System.out.println("array  non ordinato");
 
 
 	}
